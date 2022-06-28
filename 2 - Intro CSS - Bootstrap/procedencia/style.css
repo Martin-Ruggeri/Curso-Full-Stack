@@ -1,0 +1,24 @@
+h3{
+    color: green;
+}
+
+
+.azul{
+    color: blue;
+}
+
+.salmon{
+    color: salmon;
+}
+
+.oro-important{ /* el !important, se toma con mayor procedencia */
+    color: gold !important;
+}
+
+#gris{  /* El id pisa al class */
+    color: gray;
+}
+
+h3{ /* Este h3 pisa al h3 anterior */
+    color: darkorange;
+}

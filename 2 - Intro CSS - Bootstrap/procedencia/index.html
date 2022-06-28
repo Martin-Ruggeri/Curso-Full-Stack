@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilo en head (No recomendado ensucia mucho el HTML)</h1>
+
+    <h2 style="color: aqua;">Estilo en linea (Tiene mas procedencia que los demas- dificil de mantener)</h2>
+
+    <h3>Estilo en archivo separado (Recomendado)</h3>
+
+    <h3 class="azul">Estilo en archivo con atributo class</h3>
+
+    <h3 class="azul" id="gris">Estilo en archivo con atributo class y id (siempre gana el id al class)</h3>
+
+    <h3 class="oro-important" style="color: red;">Estilo en archivo con important (Con mayor precedencia que cualquiera, incluido el estilo en linea)</h3>
+
+    
+    <section class="azul">
+        <h4>Padre e Hijo</h4>
+        <p>Cualquier estilo del padre, es heredado a todos sus hijos. a menos que se especifique lo contrario</p>
+        <p class="salmon">Este hijo tiene un estilo especificado independiente</p>
+    </section>
+</body>
+</html>
