@@ -1,46 +1,15 @@
-// Esto es con ES6 (Se requiere agregar   "type":"module" en package.json)
-import express from 'express'
-
+const express = require('express');
+const morgan = require('morgan');
 const app = express();
+
+app.use(morgan('common'));
 const PORT = 8080;
 
-app.use(express.static('public'))
-app.use(express.json())
-
-// INICIAR SERVIDOR
-app.listen(PORT, () => {
-    console.log(`Run Server, PORT: ${PORT}`);
-    console.log(`http://localhost:${PORT}/`);
+app.listen(PORT , () =>{
+    console.log(`Servidor RUN`);
+    console.log(`htpp://localhost:${PORT}/`);
 });
 
-
-// ENDPOINT
-app.get('/', (request, response) => {
-    response.status(200).send("Hello World");
-});
-
-app.get('/home', (request, response) => {
-    response.status(200).send("Bienvenidos a Nimalaya");
-});
-
-
-// USER
-app.get('/users/', (request, response) => {
-    response.status(200).send(`Get all user`);
-});
-
-app.get('/user/', (request, response) => {
-    response.status(200).send(`Get id user`);
-});
-
-app.put('/user/', (request, response) => {
-    response.status(200).send(`Put user`);
-});
-
-app.post('/user/', (request, response) => {
-    response.status(200).send(`Post user`);
-});
-
-app.delete('/user/', (request, response) => {
-    response.status(200).send(`Delete user`);
-});
+// ROUTES
+app.use(require('./route/index.route'));
+app.use(require('./route/user.route'));
